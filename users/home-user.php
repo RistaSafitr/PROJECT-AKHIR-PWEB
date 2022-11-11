@@ -24,7 +24,7 @@
                         </label>
                     </div>
                 </li>
-                <li><a href=""><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+                <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
