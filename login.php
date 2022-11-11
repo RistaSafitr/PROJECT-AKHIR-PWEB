@@ -8,7 +8,7 @@
             $SESSION['login'] = true;
             echo "<script>
                 alert('Selamat datang $username');
-                document.location.href='admin/home-admin.php';
+                document.location.href='users/home-admin.php';
                 </script>";
                 $_SESSION['user_login'] = true;
                 $_SESSION['log_us'] = $result;
@@ -34,9 +34,9 @@
                 }
 
         }
-    } 
+    }
+     
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,14 +44,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Online Samarinda</title>
-    <link rel="stylesheet" href="style/dark-mode.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/login-style.css">
-    <script src="javaScript.js"></script>
     <script src="jquery.js"></script>
+
+    <title>Login</title>
 </head>
 <body>
-    <header>
+<header>
         <h3>Print Online Samarinda</h3>
         <div class="header-nav">
             <ul>
@@ -69,40 +70,43 @@
             </ul>
         </div> 
     </header>
-
     <div class="main">
         <div class="tabel">
             <table>
                 <tr>
+                    <th colspan="2"><center><h2>Login Using Username and Password</h2></center></th>
+                </tr>
+                <tr>
                     <th class="login-pic"><img src="images/business-3d-happy-robot-assistant-waving-hello.png" alt="Hello"></th>
                     <th>
-                        <form class="login" action="" method="post">
-                            <div class="input-icon">
-                                <br><h3>Login Here</h3><br>
+            <h3>Login</h3>
+            <form action="" method="post">
+            <div class="input-icon">
+                <label for="regisUsername"></label> <br>
+                <i class="login-icon"><img src="logo/icons8-contacts-32.png"></i>
+                <input type="text" name="user" placeholder="email atau username" class="input">
+                
+                <label for="regisPassword"></label> <br>
+                <i class="login-icon"><img src="logo/icons8-padlock-50.png" width="30px"></i>
+                <input type="password" name="password" placeholder="password" class="input">
 
-                                <label for="regisUsername"></label> <br>
-                                <i class="login-icon"><img src="logo/icons8-contacts-32.png"></i>
-                                <input type="text" name="regisUsername" id="regisUsername" placeholder="Username" required>
-                                
-                                <label for="regisPassword"></label> <br>
-                                <i class="login-icon"><img src="logo/icons8-padlock-50.png" width="30px"></i>
-                                <input type="password" name="regisPassword" id="regisPassword" placeholder="Password" required> <br>
+                <input type="submit" name="submit" value="Login" class="submit"><br><br>
+            </form>
 
-                                <input type="submit" name="sumbit" value="Login" class="btn-submit"> <br>
-
-                                <p>Belum Punya Akun? <a href="users/registrasi.php">Registrasi</a></p><br>
-                            </div>
-                        </form>
-                    </th>
+            <p>Belum punya akun?
+                <a href="users/register.php">Register</a>
+            </p>
+        </div>
+        </th>
                 </tr>
             </table>
         </div>
     </div>
-
-    <footer>
+    <footer>s
         <div class="copyright">
             <p><center>@Copyright 2022 - Project Akhir Kelompok 3 B1 20</center></p>
         </div>
     </footer>
+
 </body>
 </html>
