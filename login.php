@@ -43,11 +43,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Online Samarinda</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/dark-mode.css">
-    <link rel="stylesheet" href="../style/home-user.css">
-    <script src="../javaScript.js"></script>
-    <script src="../jquery.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/dark-mode.css">
+    <link rel="stylesheet" href="style/home-user.css">
+    <link rel="stylesheet" href="style/login-style.css">
+    <script src="javaScript.js"></script>
+    <script src="jquery.js"></script>
 
     <title>Login</title>
 </head>
