@@ -27,7 +27,11 @@
                     </div>
                 </li>
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+<<<<<<< HEAD
                 <li><a href="order-list.php"><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
+=======
+                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
+>>>>>>> 61be803d457c570755543f6c753bbc6729d0b798
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
