@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    require '../config.php';
+    if($_SESSION['user_login'] != true){
+        echo '<script>window.location="akun.php"</script>';
+    }
+
+    $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
+    $user = $_SESSION['log_us'];
+?>
 
 
 <!DOCTYPE html>
@@ -28,7 +38,6 @@
                 </li>
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
-                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
@@ -49,7 +58,7 @@
                                 <center><p><?=$row['jenis_layanan']?></p></center><br>
                                 <center><p>Rp. <?=$row['harga']?></p> <br></center>
                                 <div class="tambah-keranjang">
-                                    <center><a href="form-pesan.php?id=<?=$row['id']?>"><button><img src="../logo/icons8-cart-32.png" alt="cart"></button></a></center>
+                                    <center><a href="tambah-keranjang.php?id=<?=$row['id']?>"><button><img src="../logo/icons8-cart-32.png" alt="cart"></button></a></center>
                                 </div>
                             </div>
                             
@@ -63,11 +72,11 @@
     </div>
 
     <div class="quest">
-        <!-- <?php
-            $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
-            $result = mysqli_fetch_assoc($query);
-        ?> -->
-        <button><a href="rating-web.php?id_user=<?=$result['id_user']?>">Rating</a></button>
+        <h3>About Us</h3> <br>
+        <p>Print Online Samarinda hadir sebagai solusi untuk Anda.
+            Kapan dan dimanapun Anda berada,
+        </p>
+        <button><a href="rating-web.php?id_user=<?=$result['id_user']?>">Feedback</a></button>
     </div>
 
     <footer>

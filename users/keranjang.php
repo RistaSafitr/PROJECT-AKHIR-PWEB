@@ -1,3 +1,15 @@
+<?php
+    require "../config.php";
+    if(isset($_GET['id'])){
+        $cart = $_GET['id'];
+        $query = mysqli_query($db, "SELECT * FROM layanan WHERE id='$cart'"); 
+        $result = mysqli_fetch_array($query);
+        // $query0 = mysqli_query($db, "INSERT INTO keranjang_pesanan (id_pesanan) VALUES('$cart')");
+    } else {
+        $query = mysqli_query($db, "SELECT * FROM Layanan");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dark-mode.css">
+    <link rel="stylesheet" href="../style/home-user.css">
     <script src="../javaScript.js"></script>
     <script src="../jquery.js"></script>
     <title>Keranjang Saya</title>
@@ -23,7 +36,8 @@
                         </label>
                     </div>
                 </li>
-                <li><a href=""><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+                <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
@@ -31,32 +45,7 @@
     </header>
 
     <div class="main">
-        <div class="tabel-checkout">
-            <table>
-                <tr>
-                    <th colspan="8"><center><h3>Pesanan Saya</h3></center></th>
-                </tr>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Pesanan</th>
-                    <th>Request</th>
-                    <th>Jumlah Pesanan</th>
-                    <th>Total Harga</th>
-                    <th>File</th>
-                    <th>Waktu Pemesanan</th>
-                    <th>Status Pesanan</th>
-                </tr>
 
-                <?php
-                    require '../config.php';
-                    $query = mysqli_query($db, "SELECT * FROM keranjang_pesanan INNER JOIN layanan ON keranjang_pesanan.id_pesanan = layanan.id_user INNER JOIN ");
-                    $i = 1;
-                    while($row = mysqli_fetch_assoc($query)){
-
-                    }
-                ?>
-            </table>
-        </div>
     </div>
 
     <footer>

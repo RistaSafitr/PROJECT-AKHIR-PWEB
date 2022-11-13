@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2022 at 04:09 PM
+-- Generation Time: Nov 13, 2022 at 06:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `printonline_smd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `keranjang`
+--
+
+CREATE TABLE `keranjang` (
+  `id_cart` int(255) NOT NULL,
+  `id_user` int(255) NOT NULL,
+  `id_layanan` int(255) NOT NULL,
+  `nama_layanan` varchar(255) NOT NULL,
+  `harga` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `keranjang`
+--
+
+INSERT INTO `keranjang` (`id_cart`, `id_user`, `id_layanan`, `nama_layanan`, `harga`) VALUES
+(9, 1, 5, 'Print Laporan', 13000);
 
 -- --------------------------------------------------------
 
@@ -95,6 +116,13 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama`, `gender`, `email`, `no
 --
 
 --
+-- Indexes for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  ADD PRIMARY KEY (`id_cart`),
+  ADD KEY `fk_user` (`id_user`);
+
+--
 -- Indexes for table `layanan`
 --
 ALTER TABLE `layanan`
@@ -118,6 +146,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  MODIFY `id_cart` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
@@ -138,6 +172,13 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `keranjang`
+--
+ALTER TABLE `keranjang`
+  ADD CONSTRAINT `fk_layanan` FOREIGN KEY (`id_cart`) REFERENCES `layanan` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `rating`
