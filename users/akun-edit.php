@@ -1,27 +1,33 @@
 <?php
-    require "../config.php";
-    if(isset($_GET['id'])){
-        $query = mysqli_query($db,"SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
-        $result = mysqli_fetch_assoc($query);
-        $nama = $result['nama'];
-        $email = $result['email'];
-        $username = $result['username'];
-        $password = $result['password'];
-        // $konfirmasi = $result['konfirmasi'];
-        $notelp = $result['no_telp'];
-        $gender =  $result['gender'];
-        $profilepicture =$result['profile_picture'];
+    session_start();
+    require '../config.php';
+    if($_SESSION['user_login'] != true){
+        echo '<script>window.location="akun.php"</script>';
     }
 
-    if(isset($_POST['submit'])){
-        $query = mysqli_query($db,"UPDATE user SET username='$result[username]',nama='$result[nama]',password='$result[password]',email='$result[email]',notelp='$result[no_telp]',gender='$result[gender]',profile_picture='$result[profile_picture]', WHERE id = '".$_SESSION['id']."'");
-        if($query){
-            header("Location:akun.php");
-        } else {
-            echo "Update gagal";
-        }
-    }
+    $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
+    $user = $_SESSION['log_us'];
 ?>
+    <!-- // session_start();
+    // require "../config.php";
+    
+    // $id = $_GET['id'];
+
+    // if(isset($_GET['id'])){
+    //     $query = mysqli_query($db,"SELECT * FROM user WHERE id = $id");
+    //     $result = mysqli_fetch_assoc($query);
+    //     // $nama = $_POST['nama'];
+    //     // $email = $_POST['email'];
+    //     // $username = $_POST['username'];
+    //     // $password = $_POST['password'];
+    //     // // $konfirmasi = $result['konfirmasi'];
+    //     // $notelp = $_POST['no_telp'];
+    //     // // $gender =  $_POST['gender'];
+    //     // $profilepicture =$_POST['profile_picture'];
+    // }
+    
+    // $user = $_SESSION['log_us']; -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +44,13 @@
         <div class="form">
             <form action="" method="post">
                 <label for="nama">Nama</label><br>
-                <input type="text" name="nama" class="input" placeholder="Masukkan nama" value='<?=$nama?>'><br>
+                <input type="text" name="nama" class="input" placeholder="Masukkan nama" value="<?php echo $user["nama"]?>"><br>
 
                 <label for="email">Email</label><br>
-                <input type="email" name="email" class="input" placeholder="Masukkan email" value='<?=$email?>'><br>
+                <input type="email" name="email" class="input" placeholder="Masukkan email" value="<?php echo $user["email"]?>"><br>
 
                 <label for="username">Username</label><br>
-                <input type="text" name="username" class="input" placeholder="Masukkan username"value='<?=$username?>'><br>
+                <input type="text" name="username" class="input" placeholder="Masukkan username"value="<?php echo $user["username"]?>"><br>
 
                 <label for="password">Password</label><br>
                 <input type="password" name="password" class="input" placeholder="Password"value='<?=$password?>'><br>
@@ -53,13 +59,13 @@
                 <input type="password" name="konfirmasi" class="input" placeholder="Konfirmasi password"><br>
 
                 <label for="no_telp"><strong>Nomor Telepon </strong> </label> <br>
-                <input type="tel" name="no_telp" placeholder="Masukkan no telp" pattern="[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{3}" value='<?=$notelp?>'> <br>
+                <input type="tel" name="no_telp" placeholder="Masukkan no telp" pattern="[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{3}" value="<?php echo $user["no_telp"]?>"> <br>
                 
-                <p><strong>Gender :</strong> </p>
+                <!-- <p><strong>Gender :</strong> </p>
                 <label for="gender">Laki-laki</label>
                 <input type="radio" name="gender" value="Laki-laki" value='<?=$gender?>'/><br>
                 <label for="gender">Perempuan</label>
-                <input type="radio" name="gender" value="Perempuan" value='<?=$gender?>'/> <br><br>
+                <input type="radio" name="gender" value="Perempuan" value='<?=$gender?>'/> <br><br> -->
 
                 <label for="nama_gambar">Nama File</label><br>
                 <input type="text" name="nama_gambar" class="form-text">
@@ -68,6 +74,34 @@
 
                 <input type="submit" name="submit" class="submit" value="Update"><br><br>
             </form>
+            <?php
+                if(isset($_POST['submit'])){
+                    $nama = $_POST['nama'];
+                    $email = $_POST['email'];
+                    $username = $_POST['username'];
+                    $password = $_POST['password'];
+                    // $konfirmasi = $result['konfirmasi'];
+                    $notelp = $_POST['no_telp'];
+                    // $gender =  $_POST['gender'];
+                    $profilepicture =$_POST['profile_picture'];
+
+                    // $query = mysqli_query($db,"UPDATE user SET username='$_POST[username]',nama='$_POST[nama]',password='$_POST[password]',email='$_POST[email]',notelp='$_POST[no_telp]',profile_picture='$_POST[profile_picture]', WHERE id = '".$_SESSION['id']."'");
+                    // $query = mysqli_query($db,"UPDATE user SET username='$_POST[username]',nama='$_POST[nama]',password='$_POST[password]',email='$_POST[email]',notelp='$_POST[no_telp]',profile_picture='$_POST[profile_picture]', WHERE id = '".$_SESSION['id']."'");
+                    // $query = mysqli_query($db, "UPDATE user SET nama = '" . $nama . "' WHERE id = '".$user["id"]."' ");
+                    // $query = mysqli_query($db, "UPDATE user SET nama = '" . $nama . "' WHERE id = '".$user["id"]."' ");
+                    $query = mysqli_query($db, "UPDATE user SET nama ='$_POST[nama]' WHERE id=$_GET[id]");
+                    if($query){
+                        echo "<script>
+                        alert('Update Berhasil');
+                    </script>";
+                        header("Location:akun.php");
+                    } else {
+                        echo "<script>
+                        alert('Update Gagalllll');
+                    </script>";
+                    }
+                }
+?>
     </div>
 
 </body>
