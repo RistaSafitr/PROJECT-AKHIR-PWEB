@@ -2,7 +2,7 @@
     session_start();
     require '../config.php';
     if($_SESSION['user_login'] != true){
-        echo '<script>window.location="akun.php"</script>';
+        echo "Gagal Login";
     }
 
     $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
@@ -37,7 +37,7 @@
                     </div>
                 </li>
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
-                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
+                <li><a href="keranjang.php"><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
