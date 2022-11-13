@@ -1,39 +1,56 @@
 .layanan {
-    /* background-color: rgb(0, 174, 255); */
-    /* float: left; */
-    /* padding-left: 50%; */
     padding-top: 15%;
 }
 
 .box-layanan {
-    /* width: 100%; */
-    /* background-color: rgba(232, 234, 234, 0.692); */
-    /* align-items: center; */
+    /* display: flex; */
     margin-left: 5%;
     margin-right: 5rem;
-    /* float: left; */
+    /* justify-content: space-around; */
 }
 
 .box-layanan .services {
-    /* background-color: rgba(175, 181, 182, 0.669); */
-    /* border-radius: 5px; */
+    display: flex;
     float: left;
+    justify-content: space-around;
 }
 
 .services {
     justify-content: space-between;
-    padding-left: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
     font-size: 22px;
 }
 
 .services img {
+    float: left;
     margin-top: 10px;
     align-items: center;
+    border-radius: 1em;
+    
 }
 
-.tambah-keranjang input {
-    background-color: rgb(230, 234, 238);
-    border-radius: 15px;
-    height: 2rem;
-    width: 20%;
+.services p {
+    margin-top: 15rem;
+}
+
+.tambah-keranjang {
+    margin-bottom: 5rem;
+}
+
+.tambah.keranjang a {
+    font-size: 12px;
+    text-decoration: none;
+    float: left;
+}
+
+.tambah-keranjang img {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.services .tambah-keranjang button {
+    background-color: rgba(228, 234, 239, 0.626);
+    border-radius: 1rem;
+    align-items: center;
 }

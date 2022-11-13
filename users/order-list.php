@@ -52,7 +52,7 @@
                         require "../config.php";
                         if(isset($_GET['id'])){
                             $cart = $_GET['id'];
-                            $query = mysqli_query($db, "SELECT * FROM layanan  WHERE id='$cart'"); 
+                            $query = mysqli_query($db, "SELECT * FROM layanan WHERE id='$cart'"); 
                         } else {
                             $query = mysqli_query($db, "SELECT * FROM Layanan");
                             
@@ -67,8 +67,12 @@
                                 <td nowrap><center><?=$row['jenis_layanan']?></center></td>
                                 <td><center><?=$row['harga']?></center></td>
                                 <td><center><p>total harga</p></center></td>
-                                <td><p></p></td>
-                                <td><p></p></td>
+                                <td class="edit">
+                                    <a href=""><img src="../logo/icons8-edit-64.png" alt="edit" width="30" height="30"></a>
+                                </td>
+                                <td>
+                                    <a href=""><img src="../logo/icons8-delete-64.png" alt="hapus"width="30" height="30"></a>
+                                </td>
                             </tr>
 
                         <?php

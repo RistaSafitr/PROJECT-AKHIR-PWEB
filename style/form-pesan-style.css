@@ -1,0 +1,51 @@
+.main-checkout {
+    margin-top: 50px;
+}
+
+.main-checkout table p {
+    /* margin-top: 50px; */
+    font-size: 32px;
+}
+/* .main-checkout .form-checkout {
+    margin-top: 90px;
+} */
+
+/* form, form .input-icon{width:100%}
+form .input-icon{position: static;}
+
+.input-icon {
+    background-color: rgb(255, 255, 255);
+    border: 4px;
+    border-radius: 10px;
+} */
+
+form {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 16px;
+    padding-left: 40%;
+    padding-right: 35%;
+}
+
+/* form input {
+    border:1px solid rgb(221, 221, 221);
+    border-radius:2px;
+    outline:none;
+    margin-top:3px;
+    margin-bottom:6px;
+    font-size:inherit;
+    display:block;
+    padding:7px;
+    padding-left:center;
+    width: 50%; */
+    /* width:100%; */
+    /* -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+} */
+
+.main-checkout img {
+    margin-left: 5%;
+    margin-top: 20%;
+}
+

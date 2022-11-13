@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2022 at 04:52 AM
+-- Generation Time: Nov 13, 2022 at 04:09 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -20,23 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `printonline_smd`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `keranjang_pesanan`
---
-
-CREATE TABLE `keranjang_pesanan` (
-  `id_pesanan` int(255) NOT NULL,
-  `id_user` int(255) NOT NULL,
-  `id_layanan` int(255) NOT NULL,
-  `waktu_pesanan` varchar(255) NOT NULL,
-  `jumlah_pesanan` int(255) NOT NULL,
-  `link` varchar(255) NOT NULL,
-  `status_pesanan` varchar(255) NOT NULL,
-  `request` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,27 +48,23 @@ INSERT INTO `layanan` (`id`, `jenis_layanan`, `harga`, `gambar_layanan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pembayaran`
+-- Table structure for table `rating`
 --
 
-CREATE TABLE `pembayaran` (
-  `id` int(255) NOT NULL,
-  `user` varchar(255) NOT NULL,
-  `jenis_pembayaran` varchar(255) NOT NULL,
-  `file` varbinary(8000) NOT NULL
+CREATE TABLE `rating` (
+  `id_cs` int(255) NOT NULL,
+  `id_user` int(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `rate` float NOT NULL,
+  `komentar` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `transaksi`
+-- Dumping data for table `rating`
 --
 
-CREATE TABLE `transaksi` (
-  `id` int(11) NOT NULL,
-  `id_user` int(11) NOT NULL,
-  `id_pesanan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `rating` (`id_cs`, `id_user`, `username`, `rate`, `komentar`) VALUES
+(2, 1, 'ris', 5, 'uuudah');
 
 -- --------------------------------------------------------
 
@@ -116,30 +95,17 @@ INSERT INTO `user` (`id`, `username`, `password`, `nama`, `gender`, `email`, `no
 --
 
 --
--- Indexes for table `keranjang_pesanan`
---
-ALTER TABLE `keranjang_pesanan`
-  ADD PRIMARY KEY (`id_pesanan`),
-  ADD KEY `fk_user` (`id_user`),
-  ADD KEY `fk_layanan` (`id_layanan`);
-
---
 -- Indexes for table `layanan`
 --
 ALTER TABLE `layanan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pembayaran`
+-- Indexes for table `rating`
 --
-ALTER TABLE `pembayaran`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `transaksi`
---
-ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `rating`
+  ADD PRIMARY KEY (`id_cs`),
+  ADD KEY `fk_username` (`id_user`);
 
 --
 -- Indexes for table `user`
@@ -152,28 +118,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `keranjang_pesanan`
---
-ALTER TABLE `keranjang_pesanan`
-  MODIFY `id_pesanan` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `layanan`
 --
 ALTER TABLE `layanan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `pembayaran`
+-- AUTO_INCREMENT for table `rating`
 --
-ALTER TABLE `pembayaran`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `transaksi`
---
-ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `rating`
+  MODIFY `id_cs` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -186,11 +140,10 @@ ALTER TABLE `user`
 --
 
 --
--- Constraints for table `keranjang_pesanan`
+-- Constraints for table `rating`
 --
-ALTER TABLE `keranjang_pesanan`
-  ADD CONSTRAINT `fk_layanan` FOREIGN KEY (`id_layanan`) REFERENCES `layanan` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_user` FOREIGN KEY (`id_user`) REFERENCES `keranjang_pesanan` (`id_pesanan`) ON UPDATE CASCADE;
+ALTER TABLE `rating`
+  ADD CONSTRAINT `fk_username` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <link rel="stylesheet" href="../style/home-user.css">
     <script src="../javaScript.js"></script>
     <script src="../jquery.js"></script>
-    <title>Keranjang Saya</title>
+    <title>Print Online Samarinda</title>
 </head>
 <body>
     <header>
@@ -24,8 +26,8 @@
                         </label>
                     </div>
                 </li>
-                <li><a href=""><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
-                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
+                <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+                <li><a href="order-list.php"><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
@@ -43,11 +45,10 @@
                         <div class="box-layanan">
                             <div class="services">
                                 <img src="../upload/.<?=$row['gambar_layanan']?>" alt="<?=$row['gambar_layanan']?>" width="321px" height="200"><br><br>
-                                <center><?=$row['jenis_layanan']?></center>
-                                <center><p>Rp. <?=$row['harga']?></p></center> <br>
+                                <center><p><?=$row['jenis_layanan']?></p></center><br>
+                                <center><p>Rp. <?=$row['harga']?></p> <br></center>
                                 <div class="tambah-keranjang">
-                                    <a href="order-list.php?id=<?=$row['id']?>">CART</a>
-                                    <!-- <center><input type="submit" name="to-cart" value="CART"></center> -->
+                                    <center><a href="form-pesan.php?id=<?=$row['id']?>"><button><img src="../logo/icons8-cart-32.png" alt="cart"></button></a></center>
                                 </div>
                             </div>
                             
@@ -58,6 +59,14 @@
                     } 
                 ?>
         </div>
+    </div>
+
+    <div class="quest">
+        <!-- <?php
+            $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
+            $result = mysqli_fetch_assoc($query);
+        ?> -->
+        <button><a href="rating-web.php?id_user=<?=$result['id_user']?>">Rating</a></button>
     </div>
 
     <footer>

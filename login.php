@@ -12,7 +12,7 @@
                 </script>";
                 $_SESSION['user_login'] = true;
                 $_SESSION['log_us'] = $result;
-                $_SESSION['id'] = $result->user;
+                $_SESSION['id'] = $result->admin;
         } else {
             $query = mysqli_query($db,"SELECT * FROM user WHERE username='$user' OR email='$user'");
             $result = mysqli_fetch_assoc($query);
@@ -21,12 +21,11 @@
                     $SESSION['login'] = true;
                     echo "<script>
                         alert('Selamat datang $username');
-                        document.location.href='users/home-user.php';
+                        document.location.href='users/home-user.php?id_user=$result[id]';
                         </script>";
                         $_SESSION['user_login'] = true;
                         $_SESSION['log_us'] = $result;
                         $_SESSION['id'] = $result->user;
-
                 } else {
                     echo "<script>
                         alert('Username dan Password salah');
@@ -78,21 +77,21 @@
                     <th>
                         <form class="login" action="" method="post">
                             <div class="input-icon">
-                                <br><h3>Login Here</h3><br>
-
+                                <br><h3>Login Here</h3>
+                                
                                 <label for="regisUsername"></label> <br>
                                 <i class="login-icon"><img src="logo/icons8-contacts-32.png"></i>
-                                <input type="text" name="regisUsername" id="regisUsername" placeholder="Username" required>
+                                <input type="text" name="user" placeholder="Username" required>
                                 
                                 <label for="regisPassword"></label> <br>
                                 <i class="login-icon"><img src="logo/icons8-padlock-50.png" width="30px"></i>
-                                <input type="password" name="regisPassword" id="regisPassword" placeholder="Password" required> <br>
+                                <input type="password" name="password" placeholder="Password" required> <br>
 
-                                <input type="submit" name="sumbit" value="Login" class="btn-submit"> <br>
-
-                                <p>Belum Punya Akun? <a href="users/registrasi.php">Registrasi</a></p><br>
-                            </div>
-                        </form>
+                                <input type="submit" name="submit" value="Login" class="btn-submit"><br>
+                                
+                                <p>Belum punya akun?<a href="users/registrasi.php"> Registrasi</a></p><br>
+                            </form>
+                        </div>
                     </th>
                 </tr>
             </table>
