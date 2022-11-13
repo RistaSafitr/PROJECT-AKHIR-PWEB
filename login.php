@@ -8,11 +8,11 @@
             $SESSION['login'] = true;
             echo "<script>
                 alert('Selamat datang $username');
-                document.location.href='users/home-admin.php';
+                document.location.href='admin/home-admin.php';
                 </script>";
                 $_SESSION['user_login'] = true;
                 $_SESSION['log_us'] = $result;
-                $_SESSION['id'] = $result->user;
+                $_SESSION['id'] = $result->admin;
         } else {
             $query = mysqli_query($db,"SELECT * FROM user WHERE username='$user' OR email='$user'");
             $result = mysqli_fetch_assoc($query);
@@ -21,12 +21,11 @@
                     $SESSION['login'] = true;
                     echo "<script>
                         alert('Selamat datang $username');
-                        document.location.href='users/home-user.php';
+                        document.location.href='users/home-user.php?id_user=$result[id]';
                         </script>";
                         $_SESSION['user_login'] = true;
                         $_SESSION['log_us'] = $result;
                         $_SESSION['id'] = $result->user;
-
                 } else {
                     echo "<script>
                         alert('Username dan Password salah');
@@ -45,8 +44,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Online Samarinda</title>
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/dark-mode.css">
+    <link rel="stylesheet" href="style/home-user.css">
     <link rel="stylesheet" href="style/login-style.css">
+    <script src="javaScript.js"></script>
     <script src="jquery.js"></script>
 
     <title>Login</title>
@@ -74,30 +75,26 @@
         <div class="tabel">
             <table>
                 <tr>
-                    <th colspan="2"><center><h2>Login Using Username and Password</h2></center></th>
-                </tr>
-                <tr>
                     <th class="login-pic"><img src="images/business-3d-happy-robot-assistant-waving-hello.png" alt="Hello"></th>
                     <th>
-            <h3>Login</h3>
-            <form action="" method="post">
-            <div class="input-icon">
-                <label for="regisUsername"></label> <br>
-                <i class="login-icon"><img src="logo/icons8-contacts-32.png"></i>
-                <input type="text" name="user" placeholder="email atau username" class="input">
-                
-                <label for="regisPassword"></label> <br>
-                <i class="login-icon"><img src="logo/icons8-padlock-50.png" width="30px"></i>
-                <input type="password" name="password" placeholder="password" class="input">
+                        <form class="login" action="" method="post">
+                            <div class="input-icon">
+                                <br><h3>Login Here</h3>
+                                
+                                <label for="regisUsername"></label> <br>
+                                <i class="login-icon"><img src="logo/icons8-contacts-32.png"></i>
+                                <input type="text" name="user" placeholder="Username" required>
+                                
+                                <label for="regisPassword"></label> <br>
+                                <i class="login-icon"><img src="logo/icons8-padlock-50.png" width="30px"></i>
+                                <input type="password" name="password" placeholder="Password" required> <br>
 
-                <input type="submit" name="submit" value="Login" class="submit"><br><br>
-            </form>
-
-            <p>Belum punya akun?
-                <a href="users/register.php">Register</a>
-            </p>
-        </div>
-        </th>
+                                <input type="submit" name="submit" value="Login" class="btn-submit"><br>
+                                
+                                <p>Belum punya akun?<a href="users/registrasi.php"> Registrasi</a></p><br>
+                            </form>
+                        </div>
+                    </th>
                 </tr>
             </table>
         </div>

@@ -5,6 +5,6 @@ $password = "";
 $database = "printonline_smd";
 $db = mysqli_connect($hostname,$username,$password,$database);
 if(!$db){
-  echo "Koneksi tidak terhubung";
+  echo "gagal terhubung";
 }
 ?>

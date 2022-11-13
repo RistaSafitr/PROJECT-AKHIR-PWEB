@@ -20,9 +20,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Print Online Samarinda</title>
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/dark-mode.css">
     <link rel="stylesheet" href="../style/login-style.css">
-    <script src="jquery.js"></script>
+    <script src="../javaScript.js"></script>
+    <script src="../jquery.js"></script>
 </head>
 <body>
 <header>
@@ -39,7 +40,7 @@
                 </li>
                 <li><a href=""><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
-                <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
+                <li><a href="home-user.php"><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
     </header>

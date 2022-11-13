@@ -10,10 +10,6 @@ press.addEventListener("click",function showInfo(){
     }
 });
 
-// pop up box
-function cart() {
-    alert("Anda Belum Memiliki Pesanan");
-}
 
 // dom 
 const tombol = document.getElementById('mode');
