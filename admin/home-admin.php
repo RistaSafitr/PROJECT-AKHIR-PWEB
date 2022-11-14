@@ -33,14 +33,20 @@
 
 <div class ="row">
     <a href="  ">silahkan pilih menu</a><br>
-    <a href="input-layanan.php">menambah pesanan <span>&#x27F6;</span></a>
+    <a href="input-layanan.php">menambah pesanan <span>&#x27F6;</span></a><br><br>
     <!-- <span>you can enjoy a life</span> -->
 </div>
 <div class ="row">
-    <a href="layanan.php">menghapus pesanan <span>&#x27F6;</span></a>
+    <a href="list-layanan.php">melihat layanan dan harga <span>&#x27F6;</span></a><br><br>
 </div>
 <div class ="row">
-    <a href="layanan.php">edit pesanan <span>&#x27F6;</span></a>
+    <a href="layanan.php">edit pesanan <span>&#x27F6;</span></a><br><br>
+</div>
+<div class ="row">
+    <a href="layanan.php">hapus pesanan <span>&#x27F6;</span></a><br><br>
+</div>
+<div class ="row">
+    <a href="list-pesanan.php">melihat pesanan <span>&#x27F6;</span></a><br><br>
 </div>
     <span>you can enjoy a life</span>
 </div>
