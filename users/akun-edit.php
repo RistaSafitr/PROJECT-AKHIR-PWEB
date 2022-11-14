@@ -36,10 +36,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIA UNMUL</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/login-style.css">    
 </head>
 <body>
-        <h1 class="judul">Sistem Informasi Akademik Unmul</h1>
+<header>
+        <h3>Print Online Samarinda</h3>
+        <div class="header-nav">
+            <ul>
+                <li>
+                    <div class="dark">
+                        <label class="switch">
+                            <input type="checkbox" id="toggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </li>
+                <li><a href=""><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
+                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
+                <li><a href="home-user.php"><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
+            </ul>
+        </div> 
+    </header>
+<div class="main">
+        <div class="tabel">
+            <table>
+                <tr>
+                    <th colspan="2"><center><h2>UPDATE</h2></center></th>
+                </tr>
+                <tr>
+                    <!-- <th class="login-pic"><img src="images/business-3d-happy-robot-assistant-waving-hello.png" alt="Hello"></th> -->
+                    <th>
+    <div class="container regis">
+        <h1 class="judul">Data Akun</h1>
     
         <div class="form">
             <form action="" method="post">

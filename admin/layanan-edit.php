@@ -14,7 +14,6 @@ if(isset($_POST['submit'])){
     if($query){
         header("Location:layanan.php");
     } else {
-        $query = mysqli_query($db,"UPDATE layanan SET jenis_layanan='$_POST[jenis_layanan]',harga='$_POST[harga]',nama_gambar='$_POST[nama_gambar]',gambar='$_POST[gambar]', WHERE id=$_GET[id]");
         echo "Update gagal";
     }
 }

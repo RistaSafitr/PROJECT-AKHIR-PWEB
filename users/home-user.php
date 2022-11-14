@@ -7,9 +7,18 @@
 
     $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
     $user = $_SESSION['log_us'];
+
+
+if (isset($_POST['cari'])) {
+    $keyword = $_POST['keyword'];
+    $read_select_sql = "SELECT * FROM layanan WHERE jenis_layanan LIKE '%$keyword%'";
+    $result = mysqli_query($db, $read_select_sql);
+} else {
+    $read_sql = "SELECT * FROM produk";
+    $result = mysqli_query($db, $read_sql);
+}
+
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,11 +49,29 @@
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href="keranjang.php"><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href="home-user.php"><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
+            <form action="" method="post">
+                <input class="search" type="text" name="keyword" autofocus autocomplete="off">
+                <button class="button" type="submit" name="cari"><i class="fas fa-search"></i>
+                <button class="button" type="submit" href="produk.php"><i class="fas fa-arrow-left"></i>        
+            </form>
+
+                
             </ul>
         </div> 
+            <div class="cri">
+        <!-- <td>
+            <form action="" method="post">
+                <input class="search" type="text" name="keyword" autofocus autocomplete="off">
+                <button class="button" type="submit" name="cari"><i class="fas fa-search"></i>
+                <button class="button" type="submit" href="produk.php"><i class="fas fa-arrow-left"></i>        
+            </form> -->
+        </td>
+        </div>
     </header>
 
+    
     <div class="main">
+        
         <div class="layanan">
             <?php
                 require "../config.php";
