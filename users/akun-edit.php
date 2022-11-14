@@ -63,13 +63,13 @@
         <div class="tabel">
             <table>
                 <tr>
-                    <th colspan="2"><center><h2>UPDATE</h2></center></th>
+                    <th colspan="2"><center><h2></h2></center></th>
                 </tr>
                 <tr>
                     <!-- <th class="login-pic"><img src="images/business-3d-happy-robot-assistant-waving-hello.png" alt="Hello"></th> -->
                     <th>
     <div class="container regis">
-        <h1 class="judul">Data Akun</h1>
+        <h1 class="judul">Update Data Akun</h1>
     
         <div class="form">
             <form action="" method="post">

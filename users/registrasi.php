@@ -87,10 +87,6 @@
         
         </div>
     </div>
-    <footer>
-        <div class="copyright">
-            <p><center>@Copyright 2022 - Project Akhir Kelompok 3 B1 20</center></p>
-        </div>
-    </footer>
+
 </body>
 </html>

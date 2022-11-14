@@ -51,20 +51,14 @@ if (isset($_POST['cari'])) {
                 <li><a href="home-user.php"><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             <form action="" method="post">
                 <input class="search" type="text" name="keyword" autofocus autocomplete="off">
-                <button class="button" type="submit" name="cari"><i class="fas fa-search"></i>
-                <button class="button" type="submit" href="produk.php"><i class="fas fa-arrow-left"></i>        
+                <button class="button" type="submit" name="cari"><i class="a"></i>       
             </form>
 
                 
             </ul>
         </div> 
             <div class="cri">
-        <!-- <td>
-            <form action="" method="post">
-                <input class="search" type="text" name="keyword" autofocus autocomplete="off">
-                <button class="button" type="submit" name="cari"><i class="fas fa-search"></i>
-                <button class="button" type="submit" href="produk.php"><i class="fas fa-arrow-left"></i>        
-            </form> -->
+
         </td>
         </div>
     </header>
