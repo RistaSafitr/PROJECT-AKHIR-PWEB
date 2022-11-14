@@ -7,18 +7,9 @@
 
     $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
     $user = $_SESSION['log_us'];
-
-
-if (isset($_POST['cari'])) {
-    $keyword = $_POST['keyword'];
-    $read_select_sql = "SELECT * FROM layanan WHERE jenis_layanan LIKE '%$keyword%'";
-    $result = mysqli_query($db, $read_select_sql);
-} else {
-    $read_sql = "SELECT * FROM produk";
-    $result = mysqli_query($db, $read_sql);
-}
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,27 +36,15 @@ if (isset($_POST['cari'])) {
                         </label>
                     </div>
                 </li>
-                <li><a href="../logout.php"><img src="../logo/logout.png" alt="Logout" width="30px" height="30px"></a></li>
+                <li><a href="../logout.php"><img src="../logo/logout.png" alt="logout" width="30px" height="30px"></a></li>
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href="keranjang.php"><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
-                <li><a href="home-user.php"><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
-            <form action="" method="post">
-                <input class="search" type="text" name="keyword" autofocus autocomplete="off">
-                <button class="button" type="submit" name="cari"><i class="a"></i>       
-            </form>
-
-                
+                <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
-            <div class="cri">
-
-        </td>
-        </div>
     </header>
 
-    
     <div class="main">
-        
         <div class="layanan">
             <?php
                 require "../config.php";
@@ -77,7 +56,7 @@ if (isset($_POST['cari'])) {
                         <div class="box-layanan">
                             <div class="services">
                                 <img src="../upload/.<?=$row['gambar_layanan']?>" alt="<?=$row['gambar_layanan']?>" width="321px" height="200"><br><br>
-                                <center><p><?=$row['jenis_layanan']?></p></center><br>
+                                <center><p><?=$row['jenis_layanan']?></p></center>
                                 <center><p>Rp. <?=$row['harga']?></p> <br></center>
                                 <div class="tambah-keranjang">
                                     <center><a href="tambah-keranjang.php?id=<?=$row['id']?>"><button><img src="../logo/icons8-cart-32.png" alt="cart"></button></a></center>
@@ -93,13 +72,26 @@ if (isset($_POST['cari'])) {
         </div>
     </div>
 
-    <div class="quest">
-        <h3>About Us</h3> <br>
-        <p>Print Online Samarinda hadir sebagai solusi untuk Anda.
-            Kapan dan dimanapun Anda berada,
-        </p>
-        <button><a href="rating-web.php?id_user=<?=$result['id_user']?>">Feedback</a></button>
-    </div>
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col50">
+                <h2 class="titleText"> <span>A</span>bout Us</h2><br>
+                <p>Print Online Samarinda hadir sebagai solusi untuk Anda. <br>
+                            Print segala tugas anda hanya dengan satu jari. Kapan <br>
+                            dan dimanapun Anda berada, website kami dapat di akses <br>
+                            di segala situasi (kecuali jika akses internet anda tidak <br>
+                            tersedia) <br><br>
+                </p>
+                <p>Ulasan Anda akan sangat membantu kami <br>
+                        dalam mengembangkan kualitas website ini</p>
+                <tr>
+                    <td> <br><br>
+                        <button><a href="rating-web.php?id_user=<?=$result['id_user']?>">Feedback</a></button>
+                    </td>
+                </tr>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="copyright">

@@ -27,12 +27,13 @@
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dark-mode.css">
     <link rel="stylesheet" href="../style/home-user.css">
+    <link rel="stylesheet" href="../style/cart-style.css">
     <script src="../javaScript.js"></script>
     <script src="../jquery.js"></script>
     <title>Keranjang Saya</title>
 </head>
 <body>
-    <!-- <header>
+    <header>
         <h3>Print Online Samarinda</h3>
         <div class="header-nav">
             <ul>
@@ -46,14 +47,14 @@
                 </li>
                 <li><a href="akun.php"><img src="../logo/icons8-user-30.png" alt="Profile"></a></li>
                 <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
-                <li><a href=""><img src="../logo/icons8-cart-32.png" alt="Cart"></a></li>
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
-    </header> -->
+    </header>
 
     <div class="main">
         <div class="tabel-keranjang">
+            <table>
             <thead>
                 <tr>
                     <th colspan = "4">Keranjang Saya</th> <br>
@@ -82,6 +83,7 @@
                     }
                 ?>
             </tbody>
+            </table>
         </div>
     </div>
 

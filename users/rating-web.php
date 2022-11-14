@@ -33,12 +33,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dark-mode.css">
+    <link rel="stylesheet" href="../style/rating-web.css">
     <script src="../javaScript.js"></script>
     <script src="../jquery.js"></script>
     <title>Rate Layanan</title>
 </head>
 <body>
-    <!-- <header>
+    <header>
         <h3>Print Online Samarinda</h3>
         <div class="header-nav">
             <ul>
@@ -55,24 +56,21 @@
                 <li><a href=""><img src="../logo/icons8-home-page-50.png" alt="Home" width="40px" height="40px"></a></li>
             </ul>
         </div> 
-    </header> -->
+    </header>
 
     <div class="main">
         <div class="main-rating">
-            <form class="main-checkout" method="POST" enctype="multipart/form-data">
-                <div class="input-detail-pesanan">
-                    <br><h3>Rating Pesanan</h3>
+            <center><h3>Rating Pesanan</h3></center> <br><br>
+            <form method="POST" enctype="multipart/form-data">
 
-                    
+                    <label for="username">Username </label>
+                    <input value='<?php echo $user["username"] ?>' readonly>
 
-                    <label for="username">Username</label>
-                    <input value='<?php echo $user["username"] ?>' readonly> <br>
+                    <label for="rating">Rating Layanan </label>
+                    <input type="number" name="rating" required>
 
-                    <label for="rating">Rating Layanan</label>
-                    <input type="number" name="rating" required> <br>
-
-                    <label for="ulasan">Ulasan Pengguna</label><br>
-                    <textarea name="ulasan"  cols="64" rows="10"></textarea><br>
+                    <label for="ulasan">Ulasan Pengguna </label>
+                    <textarea name="ulasan" cols="100" rows="10"></textarea><br>
 
                     <input type="submit" name="rate" class="submit" value="Rate"><br><br>
                 </form>

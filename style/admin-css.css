@@ -10,7 +10,7 @@
     height: 100vh;
     padding: 0 8%;
     position: relative;
-    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(../images/empat.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(../images/bg.jpeg);
     background-size: cover;
     background-position: center;
     /* padding-top: 300%; */

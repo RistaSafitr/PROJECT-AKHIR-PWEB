@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/dark-mode.css">
-    <link rel="stylesheet" href="../style/input.css">
     <link rel="stylesheet" href="../style/admin-css2.css">
     <script src="../javaScript.js"></script>
     <script src="../jquery.js"></script>

@@ -10,9 +10,9 @@
 }
 
 .box-layanan .services {
-    display: flex;
+    /* display: flex; */
     float: left;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 
 .services {
@@ -27,11 +27,11 @@
     margin-top: 10px;
     align-items: center;
     border-radius: 1em;
-    
+    margin-bottom: 2rem;
 }
 
 .services p {
-    margin-top: 15rem;
+    margin-top: 1rem;
 }
 
 .tambah-keranjang {
@@ -47,6 +47,8 @@
 .tambah-keranjang img {
     margin-left: 3rem;
     margin-right: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 2em;
 }
 
 .services .tambah-keranjang button {
@@ -55,16 +57,46 @@
     align-items: center;
 }
 
-.cri form {
-    width:10px;
-    margin:50px auto;
+.feedback p {
+    text-align: center;
 }
 
-.header-nav button {
-    font-size: 24px;
+.about {
+    padding: 75px 50px;
+    background: rgba(134, 135, 141, 0.37);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-left: 28%;
+    margin-bottom: 50px;
+}
+#about .row {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
-.header-nav button {
+.about .row .col50 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+}
+
+div .about .row .col50 p {
+    text-align: justify;
+    text-justify: inter-word;
+    position: relative;
+    text-align: center;
+
+}
+
+.about .row .col50 .imgBx {
+    height: 300px;
+    margin-top: 20px;
+}
+
+button {
     padding: 5px 10px;
     color: white;
     border: 0;
@@ -72,12 +104,16 @@
     cursor: pointer;
     margin: 5px;
 	background-color:#87AAAA;
+    text-decoration: none;
 }
 
-.button {
-    position:relative;
-    padding:6px 15px;
-    left:-8px;
-    background-color:#93B5C6;
-    color:##4CAF50;
+button a{
+    padding: 5px 10px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+	background-color:#87AAAA;
+    text-decoration: none;
 }
