@@ -8,13 +8,7 @@
     $query = mysqli_query($db, "SELECT * FROM user WHERE id = '".$_SESSION['id']."'");
     $user = $_SESSION['log_us'];
 
-
-
-// require 'config.php';
-
-// $id = $_GET["id"];
-
-$delete_sql = "DELETE FROM user WHERE id = '".$_SESSION['id']."'";
+$delete_sql = "DELETE FROM user WHERE id=$_GET[id]";
 $result = mysqli_query($db, $delete_sql);
 
 if ($result) {
